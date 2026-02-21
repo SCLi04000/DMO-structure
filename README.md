@@ -27,3 +27,9 @@ Open the URL printed by Vite (usually `http://localhost:5173`).
 ## Important notes
 - `vite.config.js` sets `base: '/DMO-structure/'` for GitHub Pages project-site routing.
 - If your repository name changes, update the `base` value accordingly.
+
+
+## CI dependency install behavior
+- If `package-lock.json` exists, workflow uses `npm ci`.
+- If no lock file exists yet, workflow falls back to `npm install` so deployment can still proceed.
+- For reproducible builds, commit a lock file later when your environment can generate one.
